@@ -7,5 +7,11 @@ pipeline {
                 sh 'tidy -q -e green/*.html'
             }
         }
+        stage('Build Image') {
+            steps {
+                sh 'blue/run_docker.sh'
+                sh 'green/run_docker.sh'
+            }
+        }
     }
 }
