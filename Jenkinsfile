@@ -9,8 +9,8 @@ pipeline {
         }
         stage('Build Image') {
             steps {
-                sh '. blue/run_docker.sh'
-                sh '. green/run_docker.sh'
+                sh "cd blue && ./run_docker.sh"
+                sh "cd green && ./run_docker.sh"
             }
         }
     }
