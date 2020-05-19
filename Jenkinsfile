@@ -13,5 +13,11 @@ pipeline {
                 sh "cd green && ./run_docker.sh"
             }
         }
+        stage('Push Image') {
+            steps {
+                sh "cd blue && ./upload_docker.sh"
+                sh "cd green && ./upload_docker.sh"
+            }
+        }
     }
 }
