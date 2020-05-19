@@ -10,8 +10,8 @@ dockerpath=testgreenimage
 
 # Step 2:  
 # Authenticate & tag
-echo "Docker ID and Image: $dockerpath"
-docker login --username samhmariam
+# echo "Docker ID and Image: $dockerpath"
+# docker login --username samhmariam
 docker tag testgreenimage samhmariam/testgreenimage
 # Step 3:
 # Push image to a docker repository

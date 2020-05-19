@@ -15,8 +15,10 @@ pipeline {
         }
         stage('Push Image') {
             steps {
-                sh "cd blue && ./upload_docker.sh"
-                sh "cd green && ./upload_docker.sh"
+                docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-id') {
+                    sh "cd blue && ./upload_docker.sh"
+                    sh "cd green && ./upload_docker.sh"
+                }
             }
         }
     }
